@@ -11,18 +11,17 @@ namespace IMDB.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-          return View();
+          Dictionary<string, List<Movie>> model = new Dictionary<string, List<Movie>>();
+          return View(model);
         }
 
-        [HttpPost("/result")]
+        [HttpPost("/")]
         public ActionResult Result()
         {
           Dictionary<string, List<Movie>> model = new Dictionary<string, List<Movie>>();
           List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);
-          List<Movie> resultGenre = Movie.FindGenre(Request.Form["inputGenre"]);
           model.Add("Title",resultMovie);
-          model.Add("Genre",resultGenre);
-          return View(model);
+          return View("index",model);
         }
 
     }
