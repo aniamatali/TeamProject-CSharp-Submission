@@ -8,3 +8,11 @@
 /Users/Hansen/Desktop/movies.solutions/movies/bin/Debug/netcoreapp1.1/movies.pdb
 /Users/Hansen/Desktop/movies.solutions/movies/obj/Debug/netcoreapp1.1/movies.dll
 /Users/Hansen/Desktop/movies.solutions/movies/obj/Debug/netcoreapp1.1/movies.pdb
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/bin/Debug/netcoreapp1.1/movies.deps.json
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/bin/Debug/netcoreapp1.1/movies.runtimeconfig.json
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/bin/Debug/netcoreapp1.1/movies.runtimeconfig.dev.json
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/bin/Debug/netcoreapp1.1/movies.dll
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/bin/Debug/netcoreapp1.1/movies.pdb
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/obj/Debug/netcoreapp1.1/movies.AssemblyInfo.cs
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/obj/Debug/netcoreapp1.1/movies.dll
+/Users/Guest/Desktop/Epicodus-Movie-Database/movies/obj/Debug/netcoreapp1.1/movies.pdb
