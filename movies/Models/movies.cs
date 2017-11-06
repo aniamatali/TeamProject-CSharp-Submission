@@ -17,9 +17,10 @@ namespace EMDB.Models
     private int _budget;
     private int _revenue;
     private string _homepage;
+    private int _id;
 
 
-    public Movie(string title, string tagline, string overview, string status, string releaseDate, int runtime, float voteAverage, int voteCount, int budget, int revenue, string homepage)
+    public Movie(string title, string tagline, string overview, string status, string releaseDate, int runtime, float voteAverage, int voteCount, int budget, int revenue, string homepage, int id)
     {
       _title = title;
       _tagline = tagline;
@@ -32,6 +33,7 @@ namespace EMDB.Models
       _budget = budget;
       _revenue = revenue;
       _homepage = homepage;
+      _id = id;
     }
 
     public string GetTitle()
@@ -89,6 +91,10 @@ namespace EMDB.Models
       return _homepage;
     }
 
+    public int GetId()
+    {
+      return _id;
+    }
 
     public override int GetHashCode()
     {
@@ -100,7 +106,7 @@ namespace EMDB.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT DISTINCT * FROM movies WHERE title LIKE (@searchTitle) OR keywords LIKE (@searchKey) ORDER BY vote_count DESC LIMIT 5;";
+      cmd.CommandText = @"SELECT DISTINCT * FROM movies WHERE title LIKE (@searchTitle) ORDER BY vote_count DESC LIMIT 5;";
 
       MySqlParameter searchTitle = new MySqlParameter();
       searchTitle.ParameterName = "@searchTitle";
@@ -132,14 +138,15 @@ namespace EMDB.Models
         string movieOverview = rdr.GetString(7);
         string movieStatus = rdr.GetString(15);
         string movieReleaseDate = rdr.GetString(11);
-        int movieRuntime = rdr.GetInt32(3);
+        int movieRuntime = rdr.GetInt32(13);
         float movieVoteAverage = rdr.GetFloat(18);
         int movieVoteCount = rdr.GetInt32(19);
         int movieBudget = rdr.GetInt32(0);
         int movieRevenue = rdr.GetInt32(12);
         string movieHomepage = rdr.GetString(2);
+        int movieId = rdr.GetInt32(3);
 
-        Movie newMovie = new Movie(movieTitle, movieTagline, movieOverview, movieStatus, movieReleaseDate, movieRuntime, movieVoteAverage, movieVoteCount, movieBudget, movieRevenue, movieHomepage);
+        Movie newMovie = new Movie(movieTitle, movieTagline, movieOverview, movieStatus, movieReleaseDate, movieRuntime, movieVoteAverage, movieVoteCount, movieBudget, movieRevenue, movieHomepage, movieId);
 
         MovieList.Add(newMovie);
       }
@@ -182,14 +189,15 @@ namespace EMDB.Models
         string movieOverview = rdr.GetString(7);
         string movieStatus = rdr.GetString(15);
         string movieReleaseDate = rdr.GetString(11);
-        int movieRuntime = rdr.GetInt32(3);
+        int movieRuntime = rdr.GetInt32(13);
         float movieVoteAverage = rdr.GetFloat(18);
         int movieVoteCount = rdr.GetInt32(19);
         int movieBudget = rdr.GetInt32(0);
         int movieRevenue = rdr.GetInt32(12);
         string movieHomepage = rdr.GetString(2);
+        int movieId = rdr.GetInt32(3);
 
-        Movie newMovie = new Movie(movieTitle, movieTagline, movieOverview, movieStatus, movieReleaseDate, movieRuntime, movieVoteAverage, movieVoteCount, movieBudget, movieRevenue, movieHomepage);
+        Movie newMovie = new Movie(movieTitle, movieTagline, movieOverview, movieStatus, movieReleaseDate, movieRuntime, movieVoteAverage, movieVoteCount, movieBudget, movieRevenue, movieHomepage, movieId);
 
         MovieList.Add(newMovie);
       }

@@ -1,0 +1,73 @@
+h1 {
+  Font-Family: 'Oxygen', Sans-Serif;
+  Font-Size: 166px;
+  color:black;
+}
+
+p {
+  Font-Family: 'Noto Serif', Serif;
+  Font-Size: 16px;
+}
+
+h2 {
+    Font-Family: 'Oxygen', Sans-Serif;
+    font-size:40px;
+    color:black;
+}
+
+h3 {
+  text-align:center;
+}
+
+.emdb1 {
+  margin-bottom:-40px;
+  padding-bottom:0px;
+}
+
+.emdb2 {
+  text-align:center;
+  color:#000;
+  border-bottom:2px solid black;
+}
+
+
+.wrapper_nav {
+  display: inline-block;
+  width:100%;
+  color:white;
+  height:25px;
+  padding-bottom: 2em;
+  border-bottom: 2px solid black;
+}
+
+.wrapper_nav a {
+  color:black;
+  margin-right:25px;
+  font-size:20px;
+  font-Family: 'Noto Serif', Serif;
+}
+
+.titlewrapper {
+  width:100%;
+  text-align:center;
+}
+
+
+body {
+  background-color:#fff;
+}
+
+.bgwrapper {
+  background-image:url("../img/bg2.jpg");
+  height:100%;
+  padding:15px;
+}
+
+.contentwrapper {
+  float:right;
+  position: relative;
+  text-align:left;
+  width:100%;
+  height:100%;
+
+}
