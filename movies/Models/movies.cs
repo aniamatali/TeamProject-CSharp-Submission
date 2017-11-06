@@ -164,7 +164,7 @@ namespace EMDB.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT DISTINCY* FROM movies WHERE genres LIKE (@searchGenre) ORDER BY vote_count DESC LIMIT 5;";
+      cmd.CommandText = @"SELECT DISTINCT * FROM movies WHERE genres LIKE (@searchGenre) ORDER BY vote_count DESC LIMIT 5;";
 
       MySqlParameter searchGenre = new MySqlParameter();
       searchGenre.ParameterName = "@searchGenre";
