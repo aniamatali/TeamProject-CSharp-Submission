@@ -10,8 +10,9 @@
         <div class="col-md-12">
           <div class="wrapper_nav">
             <div class="nav_left">
-              <a href="/Venues">Create Account </a>
-              <a href="/BandList">Login</a>
+              <a href="/CreateAccount">Create Account </a>
+              <a href="/Login">Login</a>
+              <a href="/UserPage">Profile</a>
             </div>
           </div>
         </div>
@@ -39,6 +40,7 @@
             <div class="contentwrapper">
               <div class="row">
               <div class="col-md-6">
+                <div class="searchwrapper">
                 <h3>Search:</h3>
                 <form action='/' method="post">
                   <label for="inputTitle">Enter Your Title:</label>
@@ -47,8 +49,11 @@
                   <button type="submit" class="btn btn-success">Submit</button>
                 </form>
               </div>
+              </div>
               <div class="col-md-6">
+                <div class="moviewrapper">
                 <h3>Movies:</h3>
+                <ol>
                 @if(@Model.Count == 0)
                 {
                   <p>BLAH</p>
@@ -57,10 +62,11 @@
                 {
                   @foreach(var movie in @Model["Title"])
                   {
-                    <a href="/@movie.GetId()">@movie.GetTitle()</a>
-                    <p>@movie.GetHomepage()</p>
+                    <li><a href="/@movie.GetId()">@movie.GetTitle()</a></li>
                   }
                 }
+              </ul>
+            </div>
               </div>
 
             </div>
