@@ -40,7 +40,7 @@ namespace EMDB.Models
       }
 
       public void Save()
-     {
+    {
       MySqlConnection conn = DB.Connection();
       conn.Open();
 
@@ -69,6 +69,39 @@ namespace EMDB.Models
       {
         conn.Dispose();
       }
+    }
+
+    public bool IsNewUsers()
+    {
+      bool IsNewUsers = true;
+      List<Users> allUsers = new List<Users> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM users;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int UsersId = rdr.GetInt32(0);
+        string UsersName = rdr.GetString(1);
+        string UsersUsername = rdr.GetString(2);
+        string UsersPassword = rdr.GetString(3);
+        Users newUsers = new Users(UsersName, UsersUsername, UsersPassword, UsersId);
+        allUsers.Add(newUsers);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      foreach (var user in allUsers)
+      {
+        if(user.GetUsername() == _username)
+        {
+          IsNewUsers = false;
+        }
+      }
+      return IsNewUsers;
     }
 
       public static Users FindUser(string username, string password)
@@ -148,5 +181,4 @@ namespace EMDB.Models
         return newUsers;
       }
   }
-
 }
