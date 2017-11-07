@@ -33,6 +33,15 @@ namespace EMDB.Controllers
         return View(model);
       }
 
+    //   [HttpPost("/")]
+    // public ActionResult Home(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Movie selectedMovie = Movie.Find(id);
+    //   model.Add("movie", selectedMovie);
+    //   return View("index", model);
+    // }
+
     }
 
 }
