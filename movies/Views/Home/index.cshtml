@@ -10,14 +10,17 @@
       <div class="col-md-12">
         <div class="wrapper_nav">
           <div class="nav_left">
-            <a href="/CreateAccount">Create Account </a>
-            <a href="/Login">Login</a>
-            <a href="/UserPage">Profile</a>
-          </div>
+            <a href="/CreateAccount">CREATE ACCOUNT</a>
+            <a href="/Login">LOGIN</a>
+            <a href="/UserPage">PROFILE</a>
+          <div class="nav_right">
+            <a href="https://twitter.com/epicodus?lang=en" target=_blank><img src="/img/twitter.png" width=25px target=_blank></a>
+            <a href="https://www.facebook.com/epicodus.school/" target=_blank><img src="/img/facebook.png" width=29px target=_blank></a>
+            </div>
         </div>
       </div>
     </div>
-
+  </div>
     <div class="row">
       <div class="titlewrapper">
         <div class="col-md-12">
@@ -39,29 +42,29 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="searchwrapper">
-                  <h3>SEARCH:</h3>
+                  <h3>SEARCH</h3>
                   <form action='/' method="post">
                     <label for="inputTitle"></label>
                     <input name="inputTitle" class="form-control" id="inputTitle">
                     <br>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-dark">Submit</button>
                   </form>
                   <h4>Select a movie from the right to view more information</h4>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="moviewrapper">
-                  <h3>MOVIES:</h3>
+                  <h3>MOVIES</h3>
                   <ol>
                     @if(@Model.Count == 0)
                     {
-                      <p>BLAH</p>
+
                     }
                     else if (@Model.Count > 0)
                     {
                       @foreach(var movie in @Model["Title"])
                       {
-                        <li><a href="/@movie.GetId()">@movie.GetTitle()</a></li>
+                        <li><code><a href="/@movie.GetId()">@movie.GetTitle()</a> - <a href="/@movie.GetId()">@movie.GetReleaseDate()</a></code></li>
                       }
                     }
                   </ul>
