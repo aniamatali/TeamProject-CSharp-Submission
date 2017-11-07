@@ -1,0 +1,85 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="container-fluid">
+  <div class="wrapper">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wrapper_nav">
+          <div class="nav_left">
+            <a href="/CreateAccount">CREATE ACCOUNT</a>
+            <a href="/Login">LOGIN</a>
+            <a href="/UserPage">PROFILE</a>
+            <div class="nav_right">
+              <a href="https://twitter.com/epicodus?lang=en" target=_blank><img src="/img/twitter.png" width=25px target=_blank></a>
+              <a href="https://www.facebook.com/epicodus.school/" target=_blank><img src="/img/facebook.png" width=29px target=_blank></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="titlewrapper">
+        <div class="col-md-12">
+          <div class="emdb1">
+            <h1>EMDB</h1>
+          </div>
+          <div class="emdb2">
+            <h2>EPICODUS MOVIE DATABASE</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bgwrapper">
+          <div class="contentwrapper">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="searchwrapper">
+                  <h3>SEARCH</h3>
+                  <form action='/homepage' method="post">
+                    <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+                    <label for="inputTitle"></label>
+                    <input name="inputTitle" class="form-control" id="inputTitle">
+                    <br>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                  </form>
+                  <h4>Select a movie from the right to view more information</h4>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="moviewrapper">
+                  <h3>MOVIES</h3>
+
+                  <ol>
+                    @if(@Model.Count == 0)
+                    {
+
+                    }
+                    else if (@Model.Count > 1)
+                    {
+                      @foreach(var movie in @Model["Title"])
+                      {
+                        <form action='/@movie.GetId()' method="post">
+                          <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+                        <li><button type="submit" >@movie.GetTitle() - @movie.GetReleaseDate()</button></li>
+                        </form>
+                      }
+                    }
+                  </ol>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

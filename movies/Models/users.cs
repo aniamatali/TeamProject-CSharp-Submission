@@ -71,6 +71,43 @@ namespace EMDB.Models
       }
     }
 
+        public bool IsNewUsers()
+       {
+        bool IsNewUsers = true;
+        List<Users> allUsers = new List<Users>{};
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+
+        var cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT * FROM users;";
+
+        var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        while(rdr.Read())
+        {
+          int userId = rdr.GetInt32(0);
+          string userName = rdr.GetString(1);
+          string userUsername = rdr.GetString(2);
+          string userPassword = rdr.GetString(3);
+          Users newUsers = new Users(userName,userUsername,userPassword,userId);
+          allUsers.Add(newUsers);
+        }
+
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+
+        foreach (var user in allUsers)
+        {
+          if(user.GetUsername() == _username)
+          {
+            IsNewUsers = false;
+          }
+        }
+        return IsNewUsers;
+      }
+
       public static Users FindUser(string username, string password)
       {
         MySqlConnection conn = DB.Connection();
