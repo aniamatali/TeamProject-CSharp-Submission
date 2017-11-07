@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using EMDB.Models;
 using EMDB;
 
-namespace IMDB.Controllers
+namespace EMDB.Controllers
 {
     public class HomeController : Controller
     {
@@ -23,6 +23,15 @@ namespace IMDB.Controllers
           model.Add("Title",resultMovie);
           return View("index",model);
         }
+
+        [HttpGet("/{id}")]
+      public ActionResult MovieDetails(int id)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Movie selectedMovie = Movie.Find(id);
+        model.Add("movie", selectedMovie);
+        return View(model);
+      }
 
     }
 

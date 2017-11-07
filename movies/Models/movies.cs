@@ -247,6 +247,58 @@ namespace EMDB.Models
       }
     }
 
+    public static Movie Find(int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM movies WHERE id = (@searchId);";
+
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = id;
+      cmd.Parameters.Add(searchId);
+
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+      int MovieId = 0;
+      string MovieTitle = "";
+      string movieTagline = "";
+      string movieOverview = "";
+      string movieStatus = "";
+      string movieReleaseDate = "";
+      int movieRuntime = 0;
+      float movieVoteAverage = 0;
+      int movieVoteCount = 0;
+      int movieBudget = 0;
+      int movieRevenue = 0;
+      string movieHomepage = "";
+
+
+      while(rdr.Read())
+      {
+        MovieId = rdr.GetInt32(3);
+        MovieTitle = rdr.GetString(17);
+        movieTagline = rdr.GetString(16);
+       movieOverview = rdr.GetString(7);
+        movieStatus = rdr.GetString(15);
+        movieReleaseDate = rdr.GetString(11);
+         movieRuntime = rdr.GetInt32(13);
+         movieVoteAverage = rdr.GetFloat(18);
+         movieVoteCount = rdr.GetInt32(19);
+         movieBudget = rdr.GetInt32(0);
+         movieRevenue = rdr.GetInt32(12);
+        movieHomepage = rdr.GetString(2);
+      }
+      Movie newMovie = new Movie(MovieTitle, movieTagline, movieOverview, movieStatus, movieReleaseDate, movieRuntime, movieVoteAverage, movieVoteCount, movieBudget, movieRevenue, movieHomepage, MovieId);
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return newMovie;
+    }
+
     // public static List<Movie> GetBest()
     // {
     //   List<Movie> allMovie = new List<Movie> {};
