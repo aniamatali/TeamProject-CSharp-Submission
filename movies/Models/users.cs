@@ -39,6 +39,38 @@ namespace EMDB.Models
           return _password;
       }
 
+      public void Save()
+     {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO users (name, username, password) VALUES (@name, @username, @password);";
+
+      MySqlParameter name = new MySqlParameter();
+      name.ParameterName = "@name";
+      name.Value = this._name;
+      cmd.Parameters.Add(name);
+
+      MySqlParameter username = new MySqlParameter();
+      username.ParameterName = "@username";
+      username.Value = this._username;
+      cmd.Parameters.Add(username);
+
+      MySqlParameter password = new MySqlParameter();
+      password.ParameterName = "@password";
+      password.Value = this._password;
+      cmd.Parameters.Add(password);
+
+      cmd.ExecuteNonQuery();
+      _id = (int) cmd.LastInsertedId;
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
       public static User FindUser(string username, string password)
       {
         MySqlConnection conn = DB.Connection();
@@ -80,6 +112,40 @@ namespace EMDB.Models
         }
 
         return newUser;
+      }
+
+      public static Users FindId(int id)
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        var cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT * FROM users WHERE id = (@searchId);";
+
+        MySqlParameter searchId = new MySqlParameter();
+        searchId.ParameterName = "@searchId";
+        searchId.Value = id;
+        cmd.Parameters.Add(searchId);
+
+        var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        int userId = 0;
+        string name = "";
+        string username = "";
+        string password = "";
+
+        while(rdr.Read())
+        {
+          userId = rdr.GetInt32(0);
+          userName = rdr.GetString(1);
+          userUsername = rdr.GetString(2);
+          userPassword = rdr.GetString(3);
+        }
+        Users newUsers = new Users(userName, userUsername, userPassword, userId);
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+        return newUsers;
       }
   }
 
