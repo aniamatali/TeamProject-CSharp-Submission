@@ -71,12 +71,12 @@ namespace EMDB.Models
       }
     }
 
-      public static User FindUser(string username, string password)
+      public static Users FindUser(string username, string password)
       {
         MySqlConnection conn = DB.Connection();
         conn.Open();
         var cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT * FROM ssers WHERE username = (@searchUsername) AND password = (@searchPassword);";
+        cmd.CommandText = @"SELECT * FROM users WHERE username = (@searchUsername) AND password = (@searchPassword);";
 
         MySqlParameter searchUsername = new MySqlParameter();
         searchUsername.ParameterName = "@searchUsername";
@@ -103,7 +103,7 @@ namespace EMDB.Models
           userPassword = rdr.GetString(3);
         }
 
-        User newUser = new User(userName, userUsername, userPassword, UserId);
+        Users newUser = new Users(userName, userUsername, userPassword, userId);
 
         conn.Close();
         if (conn != null)
@@ -128,9 +128,9 @@ namespace EMDB.Models
 
         var rdr = cmd.ExecuteReader() as MySqlDataReader;
         int userId = 0;
-        string name = "";
-        string username = "";
-        string password = "";
+        string userName = "";
+        string userUsername = "";
+        string userPassword = "";
 
         while(rdr.Read())
         {
