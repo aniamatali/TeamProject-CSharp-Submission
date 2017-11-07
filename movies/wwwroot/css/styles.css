@@ -27,9 +27,8 @@ h3 {
 .emdb2 {
   text-align:center;
   color:#000;
-  border-bottom:2px solid black;
-}
 
+}
 
 .wrapper_nav {
   display: inline-block;
@@ -37,11 +36,10 @@ h3 {
   color:white;
   height:25px;
   padding-bottom: 2em;
-  border-bottom: 2px solid black;
 }
 
 .wrapper_nav a {
-  color:black;
+  color:white;
   margin-right:25px;
   font-size:20px;
   font-Family: 'Noto Serif', Serif;
@@ -50,6 +48,8 @@ h3 {
 .titlewrapper {
   width:100%;
   text-align:center;
+  border:2px solid black;
+  background-color:#afb9d6;
 }
 
 
@@ -58,9 +58,8 @@ body {
 }
 
 .bgwrapper {
-  background-image:url("../img/bg2.jpg");
   height:100%;
-  padding:15px;
+  margin-left:0px;
 }
 
 .contentwrapper {
@@ -82,7 +81,10 @@ body {
 
 .col-md-6 {
   text-align:center;
+  margin:0px;
 }
+
+
 
 li {
   text-align:left;
@@ -91,14 +93,14 @@ li {
 }
 
 .moviewrapper {
-  border-top:2px solid black;
+
   border-left:2px solid black;
   border-right:2px solid black;
     border-bottom:2px solid black;
 }
 
 .searchwrapper {
-  border-top:2px solid black;
+
   border-left:2px solid black;
   border-right:2px solid black;
     border-bottom:2px solid black;
@@ -106,4 +108,14 @@ li {
 
 h3 {
   border-bottom:2px solid black;
+  background-color:#7f8da3;
+}
+
+.btn-success {
+  background-color:black;
+}
+
+.btn-success:hover {
+  background-color:white;
+  color:black;
 }
