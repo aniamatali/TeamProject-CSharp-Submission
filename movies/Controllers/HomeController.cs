@@ -32,7 +32,6 @@ namespace EMDB.Controllers
         model.Add("movie", selectedMovie);
         return View(model);
       }
-
     }
 
 }

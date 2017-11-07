@@ -1,6 +1,39 @@
-<h1>Result Title</h1>
+@{
+  Layout = "_LayoutDetails";
+}
 
-@Model["movie"].GetTitle()<br>
-@Model["movie"].GetOverview()<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="detailswrapper">
+<h1>@Model["movie"].GetTitle()</h1>
+<p>Movie Tagline: @Model["movie"].GetTagline()</p>
+
+<p>Release Status: @Model["movie"].GetStatus()<br>
+
+<p>Release Date: @Model["movie"].GetReleaseDate()<br>
+
+<p>Runtime in Minutes: @Model["movie"].GetRuntime()<br>
+
+<p>User Rating: @Model["movie"].GetVoteAverage()<br>
+
+<p>Budget: @Model["movie"].GetBudget()<br>
+
+<p>Revenue: @Model["movie"].GetRevenue()<br>
+
+    @if (@Model["movie"].GetHomepage().Length < 5)
+{
+  <p>There is no official website for this movie.</p>
+}
+else if (@Model["movie"].GetHomepage().Length > 5)
+{
+  <a href="@Model["movie"].GetHomepage()">@Model["movie"].GetTitle()</a><br>
+}
 
 <a href="/">Home</a>
+
+
+
+
+</div>
+</div>
+</div>
