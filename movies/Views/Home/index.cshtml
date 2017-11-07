@@ -4,76 +4,74 @@
 
 
 <div class="container-fluid">
-    <div class="wrapper">
+  <div class="wrapper">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="wrapper_nav">
-            <div class="nav_left">
-              <a href="/CreateAccount">Create Account </a>
-              <a href="/Login">Login</a>
-              <a href="/UserPage">Profile</a>
-            </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wrapper_nav">
+          <div class="nav_left">
+            <a href="/CreateAccount">Create Account </a>
+            <a href="/Login">Login</a>
+            <a href="/UserPage">Profile</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="titlewrapper">
-          <div class="col-md-12">
-            <div class="emdb1">
-              <h1>EMDB</h1>
-            </div>
-            <div class="emdb2">
-              <h2>EPICODUS MOVIE DATABASE</h2>
-            </div>
+    <div class="row">
+      <div class="titlewrapper">
+        <div class="col-md-12">
+          <div class="emdb1">
+            <h1>EMDB</h1>
+          </div>
+          <div class="emdb2">
+            <h2>EPICODUS MOVIE DATABASE</h2>
           </div>
         </div>
       </div>
+    </div>
 
 
-      <div class="row">
-        <div class="col-md-12">
-
-          <div class="bgwrapper">
-
-            <div class="contentwrapper">
-              <div class="row">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bgwrapper">
+          <div class="contentwrapper">
+            <div class="row">
               <div class="col-md-6">
                 <div class="searchwrapper">
-                <h3>Search:</h3>
-                <form action='/' method="post">
-                  <label for="inputTitle">Enter Your Title:</label>
-                  <input name="inputTitle" class="form-control" id="inputTitle">
-                  <br>
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </form>
-              </div>
+                  <h3>Search:</h3>
+                  <form action='/' method="post">
+                    <label for="inputTitle">Enter Your Title:</label>
+                    <input name="inputTitle" class="form-control" id="inputTitle">
+                    <br>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </form>
+                </div>
               </div>
               <div class="col-md-6">
                 <div class="moviewrapper">
-                <h3>Movies:</h3>
-                <ol>
-                @if(@Model.Count == 0)
-                {
-                  <p>BLAH</p>
-                }
-                else if (@Model.Count > 0)
-                {
-                  @foreach(var movie in @Model["Title"])
-                  {
-                    <li><a href="/@movie.GetId()">@movie.GetTitle()</a></li>
-                  }
-                }
-              </ul>
-            </div>
+                  <h3>Movies:</h3>
+                  <ol>
+                    @if(@Model.Count == 0)
+                    {
+                      <p>BLAH</p>
+                    }
+                    else if (@Model.Count > 0)
+                    {
+                      @foreach(var movie in @Model["Title"])
+                      {
+                        <li><a href="/@movie.GetId()">@movie.GetTitle()</a></li>
+                      }
+                    }
+                  </ul>
+                </div>
               </div>
 
             </div>
-            </div>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
 </div>
