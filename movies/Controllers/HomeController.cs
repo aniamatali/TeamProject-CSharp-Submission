@@ -33,16 +33,16 @@ namespace EMDB.Controllers
         return View(model);
       }
 
-      [HttpPost("/{id}")]
-      public ActionResult ReviewDetails(int id)
-      {
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        // List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputReview"]);
-        model.Add("Title",resultMovie);
-        Movie selectedMovie = Movie.Find(id);
-        model.Add("movie", selectedMovie);
-        return View("moviedetails",model);
-      }
+      // [HttpPost("/{id}")]
+      // public ActionResult ReviewDetails(int id)
+      // {
+      //   Dictionary<string, object> model = new Dictionary<string, object>();
+      //   // List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputReview"]);
+      //   model.Add("Title",resultMovie);
+      //   Movie selectedMovie = Movie.Find(id);
+      //   model.Add("movie", selectedMovie);
+      //   return View("moviedetails",model);
+      // }
 
     }
 

@@ -8,8 +8,15 @@ h1 {
   border:2px solid black;
   padding:15px;
   margin-top:2em;
+  background-image:url("../img/detailspage6.jpg");
+  background-attachment:fixed;
+  background-repeat:none;
 }
 
 body {
-  
+    background-image:url("../img/patternbg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment:fixed;
+  background-repeat:none;
 }
