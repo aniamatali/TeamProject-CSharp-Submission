@@ -216,6 +216,37 @@ namespace EMDB.Models
       return MovieList;
     }
 
+    public void AddReviewUser(Users newUsers, string review)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO movies_users (movies_id, users_id, review) VALUES (@moviesId, @usersId, @review);";
+
+      MySqlParameter moviesId = new MySqlParameter();
+      moviesId.ParameterName = "@moviesId";
+      moviesId.Value = this._id;
+      cmd.Parameters.Add(moviesId);
+
+      MySqlParameter usersId = new MySqlParameter();
+      usersId.ParameterName = "@usersId";
+      usersId.Value = newUsers.GetId();
+      cmd.Parameters.Add(usersId);
+
+      MySqlParameter reviewInput = new MySqlParameter();
+      reviewInput.ParameterName = "@review";
+      reviewInput.Value = review;
+      cmd.Parameters.Add(reviewInput);
+
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
     // public static List<Movie> GetBest()
     // {
     //   List<Movie> allMovie = new List<Movie> {};
