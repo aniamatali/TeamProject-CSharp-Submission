@@ -40,25 +40,7 @@
     <input name="inputReview" class="form-control" id="inputReview">
     <button type="submit" class="btn btn-dark">Submit</button>
   </form>
-  @if(@Model["review"].Count == 0)
-  {
-
-  }
-  else if (@Model.Count > 0)
-  {
-    @foreach(var review in @Model["review"])
-    {
-      ol>
-        <li>
-          @review.GetReview()
-        </li
-      </ol>
-    }
-  }
-  <ol>
-    <li>
-
-  </ol>
+  
   </div>
 
   </div>
