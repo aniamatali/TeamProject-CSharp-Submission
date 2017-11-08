@@ -39,6 +39,40 @@ namespace EMDB.Models
         return _review;
       }
 
+      public string GetUserName()
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        var cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT users.* FROM users JOIN movies_users ON (users.id = (@searchId));";
+
+        MySqlParameter searchId = new MySqlParameter();
+        searchId.ParameterName = "@searchId";
+        searchId.Value = _usersId;
+        cmd.Parameters.Add(searchId);
+
+        var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        int usersId = 0;
+        string usersName = "";
+        string usersUsername = "";
+        string usersPassword = "";
+
+        while(rdr.Read())
+        {
+          usersId = rdr.GetInt32(0);
+          usersName = rdr.GetString(1);
+          usersUsername = rdr.GetString(2);
+          usersPassword = rdr.GetString(3);
+        }
+
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+        return usersName;
+      }
+
       public static Review Find(int id)
       {
         MySqlConnection conn = DB.Connection();
