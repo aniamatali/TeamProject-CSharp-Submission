@@ -37,6 +37,7 @@
                   <h3>SEARCH</h3>
                   <form action='/homepage' method="post">
                     <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+                    <input class="inputUser" name="inputUser" type="hidden" value="">
                     <label for="inputTitle"></label>
                     <input name="inputTitle" class="form-control" id="inputTitle">
                     <br>
@@ -58,14 +59,23 @@
                     }
                     else if (@Model.Count > 1)
                     {
-                      @foreach(var movie in @Model["Title"])
+                      @if(@Model["Title"].Count > 0)
                       {
-                        <form action='/@movie.GetId()' method="post">
+                        @foreach(var movie in @Model["Title"])
+                        {
+                          <form action='/@movie.GetId()' method="post">
                           <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
                           <input class="inputReview" name="inputReview" type="hidden" value="">
+                          <input class="inputUser" name="inputUser" type="hidden" value="">
 
-                        <li><button type="submit"><code>@movie.GetTitle() - @movie.GetReleaseDate()</code></button></li>
-                        </form>
+                          <li><button type="submit"><code>@movie.GetTitle() - @movie.GetReleaseDate()</code></button></li>
+                          </form>
+                        }
+
+                      }
+                      else
+                      {
+                        <p>Your Search Did Not Match Any Movies</p>
                       }
                     }
                   </ol>
