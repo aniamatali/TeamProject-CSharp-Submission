@@ -62,6 +62,8 @@
                       {
                         <form action='/@movie.GetId()' method="post">
                           <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+                          <input class="inputReview" name="inputReview" type="hidden" value="">
+
                         <li><button type="submit"><code>@movie.GetTitle() - @movie.GetReleaseDate()</code></button></li>
                         </form>
                       }
