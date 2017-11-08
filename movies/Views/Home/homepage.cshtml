@@ -10,9 +10,7 @@
       <div class="col-md-12">
         <div class="wrapper_nav">
           <div class="nav_left">
-            <a href="/CreateAccount">CREATE ACCOUNT</a>
-            <a href="/Login">LOGIN</a>
-            <a href="/UserPage">PROFILE</a>
+            <a href="/">SIGNOUT</a>
             <div class="nav_right">
               <a href="https://twitter.com/epicodus?lang=en" target=_blank><img src="/img/twitter.png" width=25px target=_blank></a>
               <a href="https://www.facebook.com/epicodus.school/" target=_blank><img src="/img/facebook.png" width=29px target=_blank></a>
@@ -68,7 +66,7 @@
                       {
                         <form action='/@movie.GetId()' method="post">
                           <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-                        <li><button type="submit" >@movie.GetTitle() - @movie.GetReleaseDate()</button></li>
+                        <li><button type="submit" class="btn btn-dark">@movie.GetTitle() - @movie.GetReleaseDate()</button></li>
                         </form>
                       }
                     }
