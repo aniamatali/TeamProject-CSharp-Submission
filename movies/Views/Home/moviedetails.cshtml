@@ -39,12 +39,14 @@
         <form action='/Homepage' method="post">
         <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
         <input class="inputTitle" name="inputTitle" type="hidden" value="">
+        <input class="inputUser" name="inputUser" type="hidden" value="">
         <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
         </form>
 
 
         @foreach(var review in @Model["Review"])
         {
+          <p>@review.GetUserName()</p>
           <p>@review.GetReview()</p>
         }
 
