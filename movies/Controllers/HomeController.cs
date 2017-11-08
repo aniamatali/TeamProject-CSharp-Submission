@@ -82,7 +82,6 @@ namespace EMDB.Controllers
           model.Add("User",foundUser);
           return View("homepage",model);
         }
-
       // [HttpPost("/{id}")]
       // public ActionResult ReviewDetails(int id)
       // {

@@ -40,7 +40,7 @@ namespace EMDB.Models
       }
 
       public void Save()
-     {
+    {
       MySqlConnection conn = DB.Connection();
       conn.Open();
 
@@ -185,5 +185,4 @@ namespace EMDB.Models
         return newUsers;
       }
   }
-
 }
