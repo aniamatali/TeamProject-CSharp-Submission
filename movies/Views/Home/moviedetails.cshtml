@@ -4,44 +4,40 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="detailswrapper">
+    <div class="titlewrapper">
       <h1>@Model["movie"].GetTitle()</h1>
-      <p>Movie Tagline: @Model["movie"].GetTagline()</p>
-
-      <p>Release Status: @Model["movie"].GetStatus()</p><br>
-
-        <p>Release Date: @Model["movie"].GetReleaseDate()</p><br>
-
-          <p>Runtime in Minutes: @Model["movie"].GetRuntime()</p><br>
-
-            <p>User Rating: @Model["movie"].GetVoteAverage()</p><br>
-            <p>BUDGET:@Model["movie"].GetBudget()</p>
-
-
-
-                  @if (@Model["movie"].GetHomepage().Length < 5)
-                  {
-                    <p>There is no official website for this movie.</p>
-                  }
-                  else if (@Model["movie"].GetHomepage().Length > 5)
-                  {
-                    <a href="@Model["movie"].GetHomepage()">@Model["movie"].GetTitle()</a><br>
-                  }
-
-
-                  <form action='/HomepageNewSearch' method="post">
-                    <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-                    <button type="submit" class = "btn btn-success">Homepage</button>
-                  </form>
-
-                  <form action='{id}' method="post">
-                    <label for="inputReview"></label>
-                    <input name="inputReview" class="form-control" id="inputReview">
-                    <br>
-                    <button type="submit" class="btn btn-dark">Submit</button>
-                  </form>
-
-      </div>
+      <h3>@Model["movie"].GetTagline()</h3>
     </div>
-  </div>
-  </div>
+    <div class="borderwrap">
+      <div class="detailswrapper">
+        <h5>Release Status:</h5><p> @Model["movie"].GetStatus()</p>
+        <h5>Release Date:</h5><p> @Model["movie"].GetReleaseDate()</p>
+        <h5>Runtime:</h5><p> @Model["movie"].GetRuntime() minutes</p>
+        <h5>User Rating:</h5><p> @Model["movie"].GetVoteAverage()/10</p>
+        <h5>BUDGET:</h5><p>$@Model["movie"].GetBudget()</p>
+
+        @if (@Model["movie"].GetHomepage().Length < 5)
+        {
+          <p>There is no official website for this movie.</p>
+        }
+        else if (@Model["movie"].GetHomepage().Length > 5)
+        {
+          <h5><a href="@Model["movie"].GetHomepage()">@Model["movie"].GetTitle()</a></h5>
+        }
+
+
+
+        <form action='{id}' method="post">
+        <label for="inputReview"></label>
+        <input name="inputReview" class="form-control" id="inputReview">
+        <br>
+        <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        </div>
+        <form action='/HomepageNewSearch' method="post">
+        <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+        <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
+        </form>
+        </div>
+        </div>
+        </div>

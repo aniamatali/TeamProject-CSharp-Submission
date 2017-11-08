@@ -3,7 +3,6 @@
 }
 
 
-<div class="container-fluid">
   <div class="wrapper">
 
     <div class="row">
@@ -32,13 +31,8 @@
       </div>
     </div>
 
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="bgwrapper">
-          <div class="contentwrapper">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="searchwrapper">
                   <h3>SEARCH</h3>
                   <form action='/homepage' method="post">
@@ -51,7 +45,9 @@
                   <h4>Select a movie from the right to view more information</h4>
                 </div>
               </div>
-              <div class="col-md-6">
+            </div>
+            <div class="row">
+              <div class="col-md-12">
                 <div class="moviewrapper">
                   <h3>MOVIES</h3>
 
@@ -66,7 +62,7 @@
                       {
                         <form action='/@movie.GetId()' method="post">
                           <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-                        <li><button type="submit" class="btn btn-dark">@movie.GetTitle() - @movie.GetReleaseDate()</button></li>
+                        <li><button type="submit"><code>@movie.GetTitle() - @movie.GetReleaseDate()</code></button></li>
                         </form>
                       }
                     }
@@ -75,9 +71,7 @@
               </div>
 
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+
   </div>
-</div>

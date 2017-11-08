@@ -29,7 +29,7 @@ h3 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
-    font-family: 'Anton', sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 
 p {
@@ -156,9 +156,10 @@ ol {
 
 li {
   text-align:left;
-  font-size:20px;
+  font-size:22px;
   Font-Family: 'Oxygen', Sans-Serif;
   color:white;
+  padding-top:1px;
 }
 
 li a {
@@ -187,6 +188,10 @@ li a:hover {
   background-attachment:fixed;
 }
 
+.searchwrapper form,h4 {
+  text-align:center;
+}
+
 h3 {
   border-bottom:2px solid black;
   background-image:url("../img/patternbg.png");
@@ -194,10 +199,10 @@ h3 {
 }
 
 h4 {
-  color:white;
-  -webkit-text-stroke-width: 1px;
+  color:black;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-  font-family: 'Passion One';
+  Font-Family: 'Oxygen', Sans-Serif;
 }
 
 label {
@@ -213,6 +218,7 @@ label {
 
 code {
   opacity:.6;
+  color:black;
 }
 
 code:hover {
@@ -226,4 +232,17 @@ code:hover {
 
 .container {
   padding:0px;
+}
+
+button, input[type="submit"] {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+  border:2px solid black;
 }
