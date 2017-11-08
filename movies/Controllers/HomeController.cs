@@ -71,27 +71,17 @@ namespace EMDB.Controllers
         model.Add("movie", selectedMovie);
         Users foundUser = Users.FindId(Int32.Parse(Request.Form["userId"]));
         model.Add("User",foundUser);
+        if(Request.Form["inputReview"] != "")
+        {
+            selectedMovie.AddReviewUser(foundUser, Request.Form["inputReview"]);
+        }
+
+        List<Review> ListReview = Review.GetAllReview(id);
+        model.Add("Review", ListReview);
+
         return View(model);
         }
 
-        [HttpPost("/HomepageNewSearch")]
-        public ActionResult DetailHome()
-        {
-          Dictionary<string, object> model = new Dictionary<string, object>();
-          Users foundUser = Users.FindId(Int32.Parse(Request.Form["userId"]));
-          model.Add("User",foundUser);
-          return View("homepage",model);
-        }
-      // [HttpPost("/{id}")]
-      // public ActionResult ReviewDetails(int id)
-      // {
-      //   Dictionary<string, object> model = new Dictionary<string, object>();
-      //   List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputReview"]);
-      //   model.Add("Title",resultMovie);
-      //   Movie selectedMovie = Movie.Find(id);
-      //   model.Add("movie", selectedMovie);
-      //   return View("moviedetails",model);
-      // }
 
     }
 
