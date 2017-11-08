@@ -15,7 +15,31 @@
         <h5>Release Date:</h5><p> @Model["movie"].GetReleaseDate()</p>
         <h5>Runtime:</h5><p> @Model["movie"].GetRuntime() minutes</p>
         <h5>User Rating:</h5><p> @Model["movie"].GetVoteAverage()/10</p>
-        <h5>BUDGET:</h5><p>$@Model["movie"].GetBudget()</p>
+        <h5>Budget:</h5><p>$@Model["movie"].GetBudget()</p>
+        <h5>Revenue:</h5><p>$@Model["movie"].GetRevenue()</p>
+
+
+
+        <h5>Boxoffice Profit:</h5><p>$@Model["movie"].FigureProfit()</p>
+
+
+        <div id ="profitRevenuePercent">
+        <style>
+          #revenuePercent {width:@Model["movie"].ProfitPercentageOfRevenue()%;}
+          #revenuePercent {background-color: green;}
+        </style>
+        Profit is  @(Model["movie"].ProfitPercentageOfRevenue())% of Revenue
+        </div>
+
+        <div id ="budgetPercentRevenue">
+        <style>
+          #budgetPercent {width:@Model["movie"].BudgetPercentageOfRevenue()%;}
+          #budgetPercent {background-color: red;}
+        </style>
+        Budget was @(Model["movie"].BudgetPercentageOfRevenue())% of Revenue
+        </div>
+
+
 
         @if (@Model["movie"].GetHomepage().Length < 5)
         {
