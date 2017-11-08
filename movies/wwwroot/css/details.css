@@ -1,16 +1,68 @@
 
-
 h1 {
+    font-family: 'Alegreya', serif;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    }
+
+h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+    font-size: 21px;
+}
+
+
+.titlewrapper {
   text-align:center;
+  background-color:white;
+  margin-top:8em;
+  background-image:url("../img/detailspage7.jpg");
+  background-attachment:fixed;
+  background-repeat:none;
+  box-shadow: 10px 10px 5px #000;
+  border-bottom:1px solid black;
 }
 
 .detailswrapper {
-  border:2px solid black;
   padding:15px;
-  margin-top:2em;
-  background-image:url("../img/detailspage6.jpg");
+  background-color:white;
+  opacity:1;
+  background-image:url("../img/detailspage7.jpg");
+  background-attachment:fixed;
+  background-repeat:none;
+  font-family: 'Roboto', sans-serif;
+   font-size: 15px;
+}
+
+.borderwrap {
+  background-image:url("../img/detailspage5.jpg");
+  background-attachment:fixed;
+  background-repeat:none;
+  padding:15px;
+    box-shadow: 10px 10px 5px #000;
+
+}
+
+body {
+  background-image:url("../img/collagewallp2.jpg");
   background-attachment:fixed;
   background-repeat:none;
 }
 
-body {
+form {
+  display:inline-block;
+}
+
+.detailswrapper button {
+  margin-left:2em;
+}
+
+.borderwrap #btnRight {
+  margin-top:2em;
+  margin-left:2em;
+}
+
+#inputReview {
+  border:1px solid black;
+  margin-left:2em;
+}
