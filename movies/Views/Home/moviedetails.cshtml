@@ -2,6 +2,7 @@
   Layout = "_LayoutDetails";
 }
 
+
 <div class="row">
   <div class="col-md-12">
     <div class="titlewrapper">
@@ -27,17 +28,26 @@
 
 
 
-        <form action='{id}' method="post">
+        <form action="@Model["movie"].GetId()" method="post">
+        <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
         <label for="inputReview"></label>
         <input name="inputReview" class="form-control" id="inputReview">
         <br>
         <button type="submit" class="btn btn-dark">Submit</button>
         </form>
         </div>
-        <form action='/HomepageNewSearch' method="post">
+        <form action='/Homepage' method="post">
         <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+        <input class="inputTitle" name="inputTitle" type="hidden" value="">
         <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
         </form>
+
+
+        @foreach(var review in @Model["Review"])
+        {
+          <p>@review.GetReview()</p>
+        }
+
         </div>
         </div>
         </div>
