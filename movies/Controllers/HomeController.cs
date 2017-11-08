@@ -31,36 +31,30 @@ namespace EMDB.Controllers
           return View("index");
         }
 
-        [HttpPost("/homepageSearch")]
-        public ActionResult LoginResult()
-        {
-          Users foundUser = Users.FindUser(Request.Form["inputUser"],Request.Form["inputPass"]);
-          if(foundUser.GetUsername() == "")
-          {
-            return View("index");
-          }
-
-          Dictionary<string, object> model = new Dictionary<string, object>();
-          model.Add("User",foundUser);
-          return View("homepage",model);
-        }
-
-        [HttpGet("/homepage")]
-        public ActionResult Homepage()
-        {
-          Dictionary<string, object> model = new Dictionary<string, object>();
-          return View(model);
-        }
-
         [HttpPost("/homepage")]
         public ActionResult Result()
         {
-          Dictionary<string, object> model = new Dictionary<string, object>();
-          List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);
-          model.Add("Title",resultMovie);
-          Users foundUser = Users.FindId(Int32.Parse(Request.Form["userId"]));
-          model.Add("User",foundUser);
-          return View("homepage",model);
+          if(Request.Form["inputUser"] == "")
+          {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);
+            model.Add("Title",resultMovie);
+            Users foundUser = Users.FindId(Int32.Parse(Request.Form["userId"]));
+            model.Add("User",foundUser);
+            return View("homepage",model);
+          }
+          else
+          {
+            Users foundUser = Users.FindUser(Request.Form["inputUser"],Request.Form["inputPass"]);
+            if(foundUser.GetUsername() == "")
+            {
+              return View("index");
+            }
+
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            model.Add("User",foundUser);
+            return View("homepage",model);
+          }
         }
 
         [HttpPost("/{id}")]
