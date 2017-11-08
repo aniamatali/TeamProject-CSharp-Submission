@@ -1,5 +1,6 @@
 
 h1 {
+
     font-family: 'Alegreya', serif;
     font-weight: 700;
     line-height: 46px;
@@ -16,11 +17,13 @@ h2 {
   text-align:center;
   background-color:white;
   margin-top:8em;
-  background-image:url("../img/detailspage7.jpg");
+  background-image:url("../img/patternbg.jpg");
   background-attachment:fixed;
   background-repeat:none;
   box-shadow: 10px 10px 5px #000;
   border-bottom:1px solid black;
+  color:white;
+  padding-top:10px;
 }
 
 .detailswrapper {
@@ -35,7 +38,7 @@ h2 {
 }
 
 .borderwrap {
-  background-image:url("../img/detailspage5.jpg");
+  background-image:url("../img/patternbg.jpg");
   background-attachment:fixed;
   background-repeat:none;
   padding:15px;
