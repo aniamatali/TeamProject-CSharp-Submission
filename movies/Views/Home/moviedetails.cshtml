@@ -8,17 +8,16 @@
       <h1>@Model["movie"].GetTitle()</h1>
       <p>Movie Tagline: @Model["movie"].GetTagline()</p>
 
-      <p>Release Status: @Model["movie"].GetStatus()<br>
+      <p>Release Status: @Model["movie"].GetStatus()</p><br>
 
-        <p>Release Date: @Model["movie"].GetReleaseDate()<br>
+        <p>Release Date: @Model["movie"].GetReleaseDate()</p><br>
 
-          <p>Runtime in Minutes: @Model["movie"].GetRuntime()<br>
+          <p>Runtime in Minutes: @Model["movie"].GetRuntime()</p><br>
 
-            <p>User Rating: @Model["movie"].GetVoteAverage()<br>
+            <p>User Rating: @Model["movie"].GetVoteAverage()</p><br>
+            <p>BUDGET:@Model["movie"].GetBudget()</p>
 
-              <p>Budget: @Model["movie"].GetBudget()<br>
 
-                <p>Revenue: @Model["movie"].GetRevenue()<br>
 
                   @if (@Model["movie"].GetHomepage().Length < 5)
                   {
@@ -29,18 +28,20 @@
                     <a href="@Model["movie"].GetHomepage()">@Model["movie"].GetTitle()</a><br>
                   }
 
-                  <a href="/">Home</a>
+
+                  <form action='/HomepageNewSearch' method="post">
+                    <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
+                    <button type="submit" class = "btn btn-success">Homepage</button>
+                  </form>
+
+                  <form action='{id}' method="post">
+                    <label for="inputReview"></label>
+                    <input name="inputReview" class="form-control" id="inputReview">
+                    <br>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                  </form>
+
       </div>
     </div>
   </div>
-  <div class="row">
-  <div class="col-md-12">
-  <form action='/{id}' method="post">
-    <label for="inputReview"></label>
-    <input name="inputReview" class="form-control" id="inputReview">
-    <button type="submit" class="btn btn-dark">Submit</button>
-  </form>
-  
-  </div>
-
   </div>
