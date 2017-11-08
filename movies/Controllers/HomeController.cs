@@ -34,7 +34,7 @@ namespace EMDB.Controllers
         [HttpPost("/homepage")]
         public ActionResult Result()
         {
-          if(Request.Form["inputUser"] == "")
+          if(Request.Form["inputUser"] ==  "ω")
           {
             Dictionary<string, object> model = new Dictionary<string, object>();
             List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);

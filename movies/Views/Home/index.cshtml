@@ -1,10 +1,26 @@
-<h1>Movies</h1>
-<form action="homepage" method="post">
-    <label for="inputUser">Enter your Username</label>
-    <input name="inputUser" class="form-control" id="inputUser">
-    <label for="inputPass">Enter your Password:</label>
-    <input name="inputPass" class="form-control" id="inputPass">
-    <button type="submit" class="btn btn-dark">Submit</button>
-</form>
+@{
+  Layout = "_LayoutLogin";
+}
 
-<a href="Account">Create a New Account</a>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-dark"><a href="Account">Create a New Account</a></button>
+        <img src="img/badge.png" width=520px>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <h1>LOGIN</h1>
+  </div>
+  <div class="col-md-10">
+    <form action="homepage" method="post">
+        <label for="inputUser">Enter your Username</label>
+        <input name="inputUser" class="form-control" id="inputUser">
+        <label for="inputPass">Enter your Password:</label>
+        <input name="inputPass" class="form-control" id="inputPass">
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  </div>

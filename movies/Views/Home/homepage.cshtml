@@ -37,7 +37,7 @@
                   <h3>SEARCH</h3>
                   <form action='/homepage' method="post">
                     <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-                    <input class="inputUser" name="inputUser" type="hidden" value="">
+                    <input class="inputUser" name="inputUser" type="hidden" value=" ">
                     <label for="inputTitle"></label>
                     <input name="inputTitle" class="form-control" id="inputTitle">
                     <br>
@@ -66,7 +66,7 @@
                           <form action='/@movie.GetId()' method="post">
                           <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
                           <input class="inputReview" name="inputReview" type="hidden" value="">
-                          <input class="inputUser" name="inputUser" type="hidden" value="">
+                          <input class="inputUser" name="inputUser" type="hidden" value="ω">
 
                           <li><button type="submit"><code>@movie.GetTitle() - @movie.GetReleaseDate()</code></button></li>
                           </form>
