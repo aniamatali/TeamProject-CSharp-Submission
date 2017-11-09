@@ -19,6 +19,12 @@
         <input name="inputUser" class="form-control" id="inputUser">
         <label for="inputPass">Password:</label>
         <input name="inputPass" class="form-control" id="inputPass" type="password">
+        <input class="inputName" name="inputName" type="hidden" value="ω">
+        <br>
+        @if(@Model.GetName() == "ω")
+        {
+          <p style="color:#ea7575">You have wrong username or password!</p>
+        }
         <br>
         <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
