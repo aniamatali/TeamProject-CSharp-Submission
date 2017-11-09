@@ -36,6 +36,36 @@ namespace EMDB.Models
       _id = id;
     }
 
+    // public float FigureRevenue()
+    // {
+    //   float result =  (float)_revenue * 100 / ((float)_budget + (float)_revenue);
+    //   return result;
+    // }
+    //
+    // public float FigureBudget()
+    // {
+    //   float result =  (float)_budget * 100 / ((float)_budget + (float)_revenue);
+    //   return result;
+    // }
+
+    public float ProfitPercentageOfRevenue()
+    {
+      float result =  ((float)_revenue - (float)_budget) / (float)_revenue * 100;
+      return result;
+    }
+
+    public float BudgetPercentageOfRevenue()
+    {
+      float result = (float)_budget / (float)_revenue * 100;
+      return result;
+    }
+
+    public int FigureProfit()
+    {
+      int result = _revenue - _budget;
+      return result;
+    }
+
     public string GetTitle()
     {
       return _title;

@@ -15,7 +15,46 @@
         <h5>Release Date:</h5><p> @Model["movie"].GetReleaseDate()</p>
         <h5>Runtime:</h5><p> @Model["movie"].GetRuntime() minutes</p>
         <h5>User Rating:</h5><p> @Model["movie"].GetVoteAverage()/10</p>
-        <h5>BUDGET:</h5><p>$@Model["movie"].GetBudget()</p>
+        <h5>Budget:</h5><p>$@Model["movie"].GetBudget()</p>
+        <h5>Revenue:</h5><p>$@Model["movie"].GetRevenue()</p>
+
+
+
+        <h5>Boxoffice Profit:</h5><p>$@Model["movie"].FigureProfit()</p>
+
+
+        <div id ="revenuePercent">
+        <style>
+          #revenuePercent h5 { border-left:@Model["movie"].ProfitPercentageOfRevenue()px solid green;}
+          #revenuePercent {height:20px;}
+        </style>
+        <p> </p>
+        <h5>Profit is  @(Model["movie"].ProfitPercentageOfRevenue())% of Revenue</h5>
+        </div>
+
+
+
+
+        <div id ="budgetPercent">
+        <style>
+          #budgetPercent h5 {border-left:@Model["movie"].BudgetPercentageOfRevenue()px solid red;}
+          #budgetPercent {height:20px}
+        </style>
+        <h5>Budget was @(Model["movie"].BudgetPercentageOfRevenue())% of Revenue</h5>
+        </div>
+
+
+
+
+
+        <div id ="votewhatever">
+        <style>
+        #votewhatever {width:@(Model["movie"].GetVoteAverage() * 10)%}
+        #votewhatever {background-color: orange;}
+        #votewhatever {height:20px;}
+        </style>
+        Rating is @(Model["movie"].GetVoteAverage() * 10)% out of 100.
+        </div>
 
         @if (@Model["movie"].GetHomepage().Length < 5)
         {
