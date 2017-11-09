@@ -2,39 +2,38 @@
 
 #### _ 11.6.17_
 
-#### By _**Marcus Parmentier,Issacc Aniamatali, Hansen, John Murray, Victor M. Puentes Jr**
+#### Authors
+**
+Marcus Parmentier, Issacc Aniamatali, Hansen, John Murray, Victor M. Puentes Jr**
 
 ## Description
 
-_An app that will emulate IMBD but with some custom modifications.
+An app that will emulate IMBD but with some custom modifications.
 
-** User Story
+## Specifications
 
 | User Behavior | Input | Output |
 |---|---|---|
 |1. As a user I need to be able to sign in, by creating a username and password | enter username and password | username and password is saved to database, true. |
-|2.
-## Specifications
+|2. With a username and password, I can enter homepage and start a search | dark knight | all movies with "dark knight" in the title are appended. |
+|3. Once movies are appended I can now click on the movie and see details pulled from the database | movie details are appended including realease date, homewebpage, countries it was produced in, etc... | movie details are appended |
+|4. Once movie details are appended, I can now write my own review of the movie. | "this movie should be erased from history!!!" | review is appended |
 
-| App Behavior  | Expected  | Actual  |
-|---|---|---|
-|1. |  |  |
-|2.
 
 ## Getting Started
 
-May be deployed using git hub at  https://vmpuentes.github.com/EMDB.Solutions/.
+May be deployed using git hub at  https://github.com/heartfeats/Epicodus-Movie-Database.git
 
 ### Installation/Setup Requirements
-1.This app may be cloned at  https://vmpuentes.github.com/EMDB.Solutions/.
+1.This app may be cloned at https://github.com/heartfeats/Epicodus-Movie-Database.git
 2. Set up .NET dependencies
 3. Set up database with MAMP and create a database with these instructions...
 
 ## Database Setup
 > CREATE DATABASE emdb;
 > USE emdb;
-> CREATE TABLE movie (id serial PRIMARY KEY, name VARCHAR(255), );
-> CREATE TABLE user_details (id serial PRIMARY KEY, description VARCHAR(255), stylist_id INT);
+> CREATE TABLE movie (id serial PRIMARY KEY, name VARCHAR(255), keywords VARCHAR(255), title VARCHAR(255), > > revenue INT, overview VARCHAR(255), homepage VARCHAR(255), original_language VARCHAR(255), origninal_title VARCHAR(255), overview VARCHAR(255), popularity VARCHAR(255), production_countries VARCHAR(255), release_date DATE, runtime INT, spoken_languages VARCHAR(255), statue INT, tagline VARCHAR(255), title VARCHAR(255), vote_average INT, vote_count INT););
+> CREATE TABLE user_details (id serial PRIMARY KEY, description VARCHAR(255))
 
 
 ## Built With
@@ -47,13 +46,7 @@ May be deployed using git hub at  https://vmpuentes.github.com/EMDB.Solutions/.
 * [Javascript] (https://www.javascript.com/) - Used for user interactives
 * [Bootstrap](http://getbootstrap.com/) - CSS library used
 
-## Authors
- **Hansen**
- **Victor M. Puentes Jr.**
- **John Murray **
- **Marcus Parmentier **
- **Issacc Aniamatali **
- **Victor M. Puentes Jr.**
+
 
 ## License
 
