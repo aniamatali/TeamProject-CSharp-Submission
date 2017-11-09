@@ -29,7 +29,7 @@ namespace EMDB.Controllers
           {
             newUser.Save();
           }
-          return View("index");
+          return View("index",newUser);
         }
 
         [HttpPost("/homepage")]
@@ -87,7 +87,7 @@ namespace EMDB.Controllers
 
         return View(model);
         }
-        
+
     }
 
 }
