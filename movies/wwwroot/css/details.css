@@ -1,71 +1,168 @@
-
 h1 {
-
-    font-family: 'Alegreya', serif;
-    font-weight: 700;
-    line-height: 46px;
-    font-size: 46px;
-    }
-
-h2 {
-  font-family: 'Roboto Condensed', sans-serif;
-    font-size: 21px;
+  font-size:150px;
+  font-family: 'Anton', sans-serif;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    opacity:.7;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 0px 0px 2px black, 0 0 45px black, 0 0 5px black;
+    text-align:left;
 }
 
-
-.titlewrapper {
-  text-align:center;
-  background-color:white;
-  margin-top:8em;
-  background-image:url("../img/patternbg.jpg");
-  background-attachment:fixed;
-  background-repeat:none;
-  box-shadow: 10px 10px 5px #000;
-  border-bottom:1px solid black;
+h3 {
+  margin-top:-15px;
+  padding-top:0px;
+  font-size:70px;
+  font-family: 'Anton', sans-serif;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
   color:white;
-  padding-top:10px;
+  text-align:left;
 }
 
-.detailswrapper {
-  padding:15px;
+h4 {
+  font-size:60px;
+  font-family: 'Anton', sans-serif;
+  color:black;
   background-color:white;
-  opacity:1;
-  background-image:url("../img/detailspage7.jpg");
+  opacity:.4;
+  background-color:black;
+  background-image:url("../img/collagewallp.jpg");
   background-attachment:fixed;
-  background-repeat:none;
-  font-family: 'Roboto', sans-serif;
-   font-size: 15px;
+  margin-bottom:0px;
+  border-left:20px solid black;
 }
 
-.borderwrap {
-  background-image:url("../img/patternbg.jpg");
-  background-attachment:fixed;
-  background-repeat:none;
-  padding:15px;
-    box-shadow: 10px 10px 5px #000;
+h4:hover {
+  opacity:1;
+  -webkit-transition: all 1.5s ease-in-out;
+    -moz-transition: all 1.5s ease-in-out;
+    -o-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+}
 
+.h5hover {
+  background-color:black;
+  background-image:url("../img/collagewallp.jpg");
+  background-attachment:fixed;
+  border-left:20px solid white;
+}
+
+.h5hover h5 {
+  opacity:0;
+}
+
+h5 {
+  text-align:right;
+  font-size:80px;
+  font-family: 'Anton', sans-serif;
+  opacity:1;
+  -webkit-transition: all 1.5s ease-in-out;
+    -moz-transition: all 1.5s ease-in-out;
+    -o-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+    margin-bottom:0px;
+}
+
+h5:hover {
+  color:black;
+  opacity:1;
+  background-image:url("../img/collagewallp.jpg");
+  background-attachment:fixed;
+  margin-right:50%;
 }
 
 body {
-  background-image:url("../img/collagewallp2.jpg");
+  background-color:grey;
+}
+
+#revenuepercent {
+  opacity:1;
+  background-image:url("../img/collagewallp.jpg");
   background-attachment:fixed;
-  background-repeat:none;
+
 }
 
-form {
-  display:inline-block;
+#budgetPercent {
+  opacity:1;
+  background-image:url("../img/collagewallp.jpg");
+  background-attachment:fixed;
+
 }
 
-.detailswrapper button {
-  margin-left:2em;
+#budgetPercent h2 {
+  opacity:0;
 }
 
-.borderwrap #btnRight {
-  margin-top:2em;
-  margin-left:2em;
+#revenuePercent h2 {
+  opacity:0;
 }
 
-#inputReview {
-  border:1px solid black;
-  margin-left:2em;
+h2 {
+  text-align:right;
+  font-size:60px;
+  font-family: 'Anton', sans-serif;
+  opacity:1;
+  -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+    margin-bottom:0px;
+}
+
+#revenuePercent:hover h2 {
+  opacity:1;
+  font-family: 'Anton', sans-serif;
+  text-align:right;
+  font-size:50px;
+  -webkit-transition: all 1.2s ease-in;
+    -moz-transition: all 1.2s ease-in;
+      -o-transition: all 1.2s ease-in;
+      transition: all 1.2s ease-in;
+}
+
+#budgetPercent:hover h2 {
+  opacity:1;
+  font-family: 'Anton', sans-serif;
+  text-align:right;
+  font-size:50px;
+  -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+      -o-transition: all 1.2s ease-in-out;
+      transition: all 1.2s ease-in-out;
+}
+
+#officialwebsite  {
+  color:white;
+  font-family: 'Anton', sans-serif;
+  font-size:50px;
+  margin:auto;
+  display:block;
+  text-align:center;
+  margin-top:0px;
+  opacity:.8;
+  background-image:url("../img/collagewallp.jpg");
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+label {
+  font-family: 'Anton', sans-serif;
+  font-size:60px;
+  color:black;
+}
+
+input {
+  height:100px;
+}
+
+#officialwebsite:hover {
+  opacity:1;
+  -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+      -o-transition: all 1.2s ease-in-out;
+      transition: all 1.2s ease-in-out;
 }
