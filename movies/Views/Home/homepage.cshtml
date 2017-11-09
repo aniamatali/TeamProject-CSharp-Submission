@@ -57,7 +57,7 @@
                     {
 
                     }
-                    else if (@Model.Count > 1)
+                    else if (@Model.Count == 2)
                     {
                       @if(@Model["Title"].Count > 0)
                       {
@@ -75,15 +75,13 @@
                       }
                       else
                       {
-                        <p>Your Search Did Not Match Any Movies</p>
+                          <p>Your Search Did Not Match Any Movies</p>
                       }
                     }
+                    
                   </ol>
                 </div>
               </div>
 
             </div>
-
-
-
   </div>
