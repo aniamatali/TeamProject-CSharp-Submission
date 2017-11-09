@@ -69,19 +69,3 @@ form {
   border:1px solid black;
   margin-left:2em;
 }
-
-#revenuePercent {
-  width: 100%
-  background-color: green;
-}
-
-#total {
-  background-color:yellow;
-  width:100%;
-}
-
-
-
-#total p {
-  margin-bottom:0px;
-}
