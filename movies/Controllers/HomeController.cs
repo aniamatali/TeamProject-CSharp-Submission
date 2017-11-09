@@ -11,7 +11,8 @@ namespace EMDB.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-          return View();
+          Users newUser = Users.FindId(1);
+          return View(newUser);
         }
 
         [HttpGet("/Account")]
@@ -34,7 +35,17 @@ namespace EMDB.Controllers
         [HttpPost("/homepage")]
         public ActionResult Result()
         {
-          if(Request.Form["inputUser"] ==  "ω")
+          if(Request.Form["inputTitle"] ==  "ω")
+          {
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);
+            model.Add("Title",resultMovie);
+            Users foundUser = Users.FindId(Int32.Parse(Request.Form["userId"]));
+            model.Add("User",foundUser);
+            model.Add("ThirdModel", "ω");
+            return View("homepage",model);
+          }
+          else if(Request.Form["inputUser"] ==  "ω")
           {
             Dictionary<string, object> model = new Dictionary<string, object>();
             List<Movie> resultMovie = Movie.FindTitle(Request.Form["inputTitle"]);
@@ -48,7 +59,8 @@ namespace EMDB.Controllers
             Users foundUser = Users.FindUser(Request.Form["inputUser"],Request.Form["inputPass"]);
             if(foundUser.GetUsername() == "")
             {
-              return View("index");
+              Users checkUser = new Users(Request.Form["inputName"],Request.Form["inputUser"],Request.Form["inputPass"]);
+              return View("index", checkUser);
             }
 
             Dictionary<string, object> model = new Dictionary<string, object>();
@@ -75,8 +87,7 @@ namespace EMDB.Controllers
 
         return View(model);
         }
-
-
+        
     }
 
 }
