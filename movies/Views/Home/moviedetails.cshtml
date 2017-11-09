@@ -36,7 +36,9 @@
 
         @if (@Model["movie"].GetHomepage().Length < 5)
         {
+        <div id="officialwebsite">
           <p>There is no official website for this movie.</p>
+        </div>
         }
         else if (@Model["movie"].GetHomepage().Length > 5)
         {
@@ -60,11 +62,12 @@
         <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
         </form>
 <br>
+  <div class="cardcontainer">
         <h3>Reviews/Comments Section</h3>
         @foreach(var review in @Model["Review"])
         {
-        <div class="card ">
-        <div class="card-header bg-primary text-white">
+        <div class="card">
+        <div class="card-secondary bg-secondary text-white">
         @review.GetUserName()
         </div>
         <div class="card-body">
@@ -72,7 +75,7 @@
         </div>
         </div>
         }
-
+        </div>
 
         </div>
         </div>
