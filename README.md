@@ -4,7 +4,7 @@
 
 #### Authors
 **
-Marcus Parmentier, Issacc Aniamatali, Hansen, John Murray, Victor M. Puentes Jr**
+Marcus Parmentier, Isaac Niamatali, Hansen, John Murray, Victor M. Puentes Jr**
 
 ## Description
 
