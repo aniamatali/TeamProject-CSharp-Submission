@@ -29,6 +29,10 @@ namespace EMDB.Controllers
           {
             newUser.Save();
           }
+          else
+          {
+            return View("AccountForm");
+          }
           return View("index",newUser);
         }
 
