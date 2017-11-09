@@ -59,13 +59,20 @@
         <input class="inputUser" name="inputUser" type="hidden" value="ω">
         <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
         </form>
-
-
+<br>
+        <h3>Reviews/Comments Section</h3>
         @foreach(var review in @Model["Review"])
         {
-          <p>@review.GetUserName()</p>
-          <p>@review.GetReview()</p>
+        <div class="card ">
+        <div class="card-header bg-primary text-white">
+        @review.GetUserName()
+        </div>
+        <div class="card-body">
+        @review.GetReview()
+        </div>
+        </div>
         }
+
 
         </div>
         </div>
