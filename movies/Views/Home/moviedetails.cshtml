@@ -11,49 +11,27 @@
     </div>
     <div class="borderwrap">
       <div class="detailswrapper">
-        <h5>Release Status:</h5><p> @Model["movie"].GetStatus()</p>
-        <h5>Release Date:</h5><p> @Model["movie"].GetReleaseDate()</p>
-        <h5>Runtime:</h5><p> @Model["movie"].GetRuntime() minutes</p>
-        <h5>User Rating:</h5><p> @Model["movie"].GetVoteAverage()/10</p>
-        <h5>Budget:</h5><p>$@Model["movie"].GetBudget()</p>
-        <h5>Revenue:</h5><p>$@Model["movie"].GetRevenue()</p>
-
-
-
-        <h5>Boxoffice Profit:</h5><p>$@Model["movie"].FigureProfit()</p>
+        <h4>RELEASE STATUS:</h4><div class="h5hover"><h5> @Model["movie"].GetStatus()</h5></div>
+        <h4>RELEASE DATE:</h4><div class="h5hover"><h5> @Model["movie"].GetReleaseDate()</h5></div>
+        <h4>RUNTIME:</h4><div class="h5hover"><h5> @Model["movie"].GetRuntime() minutes</h5></div>
+        <h4>USER RATING:</h4><div class="h5hover"><h5> @Model["movie"].GetVoteAverage()/10</h5></div>
+        <h4>BUDGET:</h4><div class="h5hover"><h5>$@Model["movie"].GetBudget()</h5></div>
+        <h4>REVENUE:</h4><div class="h5hover"><h5>$@Model["movie"].GetRevenue()</h5></div>
+        <h4>BOXOFFICE PROFIT:</h4><div class="h5hover"><h5>$@Model["movie"].FigureProfit()</h5></div>
 
 
         <div id ="revenuePercent">
         <style>
-          #revenuePercent h5 { border-left:@Model["movie"].ProfitPercentageOfRevenue()px solid green;}
-          #revenuePercent {height:20px;}
+          #revenuePercent h2 { border-left:@Model["movie"].ProfitPercentageOfRevenue()px solid #669b8e;}
         </style>
-        <p> </p>
-        <h5>Profit is  @(Model["movie"].ProfitPercentageOfRevenue())% of Revenue</h5>
+        <h2>Profit is  @(Model["movie"].ProfitPercentageOfRevenue())% of Revenue</h2>
         </div>
-
-
-
 
         <div id ="budgetPercent">
         <style>
-          #budgetPercent h5 {border-left:@Model["movie"].BudgetPercentageOfRevenue()px solid red;}
-          #budgetPercent {height:20px}
+          #budgetPercent h2 {border-left:@Model["movie"].BudgetPercentageOfRevenue()px solid #9b6568;}
         </style>
-        <h5>Budget was @(Model["movie"].BudgetPercentageOfRevenue())% of Revenue</h5>
-        </div>
-
-
-
-
-
-        <div id ="votewhatever">
-        <style>
-        #votewhatever {width:@(Model["movie"].GetVoteAverage() * 10)%}
-        #votewhatever {background-color: orange;}
-        #votewhatever {height:20px;}
-        </style>
-        Rating is @(Model["movie"].GetVoteAverage() * 10)% out of 100.
+        <h2>Budget was @(Model["movie"].BudgetPercentageOfRevenue())% of Revenue</h2>
         </div>
 
         @if (@Model["movie"].GetHomepage().Length < 5)
@@ -62,14 +40,14 @@
         }
         else if (@Model["movie"].GetHomepage().Length > 5)
         {
-          <h5><a href="@Model["movie"].GetHomepage()">@Model["movie"].GetTitle()</a></h5>
+          <div id="officialwebsite">
+          <a href="@Model["movie"].GetHomepage()" target=_blank>Visit the Official Site</a>
+          </div>
         }
-
-
 
         <form action="@Model["movie"].GetId()" method="post">
         <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-        <label for="inputReview"></label>
+        <label for="inputReview">Leave a Review</label>
         <input name="inputReview" class="form-control" id="inputReview">
         <br>
         <button type="submit" class="btn btn-dark">Submit</button>
@@ -77,7 +55,7 @@
         </div>
         <form action='/Homepage' method="post">
         <input class="userId" name="userId" type="hidden" value=@Model["User"].GetId()>
-        <input class="inputTitle" name="inputTitle" type="hidden" value="">
+        <input class="inputTitle" name="inputTitle" type="hidden" value="ω">
         <input class="inputUser" name="inputUser" type="hidden" value="ω">
         <button type="submit" class = "btn btn-dark" id="btnright">Homepage</button>
         </form>
