@@ -7,16 +7,19 @@
 
 .col-md-2 {
   margin-top:5px;
-  background-color:#ffa200;
+  background-color:#c2c2c2;
 }
 
 .col-md-10 {
   margin-top:5px;
-  background-color:#7f7f7f;
+  background-color:#ffa200;
 }
 
 body {
-  background-color:#a5a5a5;
+  background-image:url("../img/detailspage44.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .col-md-10 form {
@@ -40,7 +43,6 @@ button {
 
 form {
   margin-bottom:2px;
-  color: white;
 }
 
 h1 {
@@ -48,4 +50,8 @@ h1 {
   text-align:center;
   padding-top:105px;
   padding-bottom:50px;
+}
+
+img {
+  margin-bottom:2em;
 }
